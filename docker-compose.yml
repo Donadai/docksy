@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: docksy-postgres
+    environment:
+      POSTGRES_DB: docksydb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./docksy-be
+      dockerfile: Dockerfile
+    container_name: docksy-backend
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./docksy-fe
+      dockerfile: Dockerfile
+    container_name: docksy-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
