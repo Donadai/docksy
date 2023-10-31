@@ -1,0 +1,23 @@
+.navbar {
+  background-image: url('../../public/images/home/navbar-background.png');
+  background-repeat: repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5% 2%;
+}
+
+.logo a {
+  display: flex;
+}
+
+.logo img {
+  height: 80px;
+  width: 80px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3vw;
+}
