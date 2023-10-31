@@ -1,21 +1,27 @@
-import Home from './components/Home';
+import './App.scss';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import NavigationBar from './components/NavigationBar';
-import { useAuth0 } from '@auth0/auth0-react';
+import Search from './components/search/Search';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 function App() {
-  const { isAuthenticated } = useAuth0();
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
-        <NavigationBar isLoggedIn={isAuthenticated} />
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Search />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/explore" element={<Search />} />
+          <Route path="/saved" element={<Search />} />
+          <Route path="/bookings" element={<Search />} />
+          <Route path="/profile" element={<Search />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App;

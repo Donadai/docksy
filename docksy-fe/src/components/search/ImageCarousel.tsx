@@ -1,4 +1,4 @@
-import '../styles/imageCarousel.css';
+import './ImageCarousel.scss';
 
 import { useEffect, useState } from 'react';
 
@@ -24,16 +24,14 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 
   return (
     <div className="carousel-container">
-      <div className="image-container">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            style={{ display: index === currentImageIndex ? 'block' : 'none' }}
-          />
-        ))}
-      </div>
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image.src}
+          alt={image.alt}
+          style={{ display: index === currentImageIndex ? 'block' : 'none' }}
+        />
+      ))}
     </div>
   );
 };

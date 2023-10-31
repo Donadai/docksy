@@ -1,7 +1,7 @@
 import ImageCarousel from './ImageCarousel';
 
-const Home = () => {
-  const landingPageImages = [
+const Search = () => {
+  const images = [
     { src: '../images/home/landing1.jpg', alt: 'Landing 1' },
     { src: '../images/home/landing2.jpg', alt: 'Landing 2' },
     { src: '../images/home/landing3.jpg', alt: 'Landing 3' },
@@ -12,7 +12,7 @@ const Home = () => {
     { src: '../images/home/landing8.jpg', alt: 'Landing 8' },
   ];
 
-  return <ImageCarousel images={landingPageImages} />;
+  return <ImageCarousel images={images} />;
 };
 
-export default Home;
+export default Search;
