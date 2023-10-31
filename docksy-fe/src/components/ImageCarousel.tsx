@@ -15,7 +15,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10000); // Change image every x seconds (adjust as needed)
+    }, 5000); // Change image every x seconds (adjust as needed)
 
     return () => {
       clearInterval(interval);
